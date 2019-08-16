@@ -20,9 +20,9 @@ namespace Algoritmo
         }
        public void ActualizarEstado()
         {
-            if (TiempoDeEjecucion<=0)
+            if (TE<=0)
             {
-                Estado = true;
+                E = true;
             }
         }
     }
