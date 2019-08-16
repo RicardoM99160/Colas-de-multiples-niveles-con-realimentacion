@@ -407,9 +407,9 @@
             this.label11.ForeColor = System.Drawing.Color.LightCoral;
             this.label11.Location = new System.Drawing.Point(666, 242);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 31);
+            this.label11.Size = new System.Drawing.Size(122, 31);
             this.label11.TabIndex = 12;
-            this.label11.Text = "Cola 5";
+            this.label11.Text = "palacios";
             // 
             // Form1
             // 
