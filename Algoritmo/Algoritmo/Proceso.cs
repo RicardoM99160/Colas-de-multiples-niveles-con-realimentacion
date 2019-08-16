@@ -11,10 +11,10 @@ namespace Algoritmo
         public int Prioridad;
         public int TiempoDeEjecucion;
         public bool Estado=false;
-
+        //RICARDOOOO
        public void ActualizarEstado()
         {
-            if (Prioridad<=0)
+            if (TiempoDeEjecucion<=0)
             {
                 Estado = true;
             }
