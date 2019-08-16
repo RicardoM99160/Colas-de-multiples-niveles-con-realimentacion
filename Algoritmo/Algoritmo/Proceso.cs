@@ -20,7 +20,7 @@ namespace Algoritmo
         }
        public void ActualizarEstado()
         {
-            if (TE<=0)
+            if (TE <= 0)
             {
                 E = true;
             }
