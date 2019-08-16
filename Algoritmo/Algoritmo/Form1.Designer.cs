@@ -362,9 +362,9 @@
             this.label4.ForeColor = System.Drawing.Color.LightCoral;
             this.label4.Location = new System.Drawing.Point(666, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(312, 31);
+            this.label4.Size = new System.Drawing.Size(98, 31);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Ojalá te muras cerote:(";
+            this.label4.Text = "Cola 2";
             // 
             // label5
             // 
@@ -373,9 +373,9 @@
             this.label5.ForeColor = System.Drawing.Color.LightCoral;
             this.label5.Location = new System.Drawing.Point(333, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 31);
+            this.label5.Size = new System.Drawing.Size(98, 31);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Hola";
+            this.label5.Text = "Cola 1";
             // 
             // Prioridad5dt
             // 
@@ -407,9 +407,9 @@
             this.label11.ForeColor = System.Drawing.Color.LightCoral;
             this.label11.Location = new System.Drawing.Point(666, 242);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(122, 31);
+            this.label11.Size = new System.Drawing.Size(98, 31);
             this.label11.TabIndex = 12;
-            this.label11.Text = "palacios";
+            this.label11.Text = "Cola 5";
             // 
             // Form1
             // 
