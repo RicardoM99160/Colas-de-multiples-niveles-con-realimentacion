@@ -362,9 +362,9 @@
             this.label4.ForeColor = System.Drawing.Color.LightCoral;
             this.label4.Location = new System.Drawing.Point(666, 23);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 31);
+            this.label4.Size = new System.Drawing.Size(172, 31);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Cola 2";
+            this.label4.Text = "Hola ricardo";
             // 
             // label5
             // 
