@@ -8,10 +8,16 @@ namespace Algoritmo
 {
     class Proceso
     {
-        public int Prioridad;
-        public int TiempoDeEjecucion;
-        public bool Estado=false;
-        //RICARDOOOO
+        public int P = 0;
+        public int TE = 0;
+        public bool E = false;
+
+        public Proceso(int Prioridad, int TiempoEjecucion, bool Estado)
+        {
+            P = Prioridad;
+            TE = TiempoEjecucion;
+            E = Estado;
+        }
        public void ActualizarEstado()
         {
             if (TiempoDeEjecucion<=0)
