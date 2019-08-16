@@ -373,9 +373,9 @@
             this.label5.ForeColor = System.Drawing.Color.LightCoral;
             this.label5.Location = new System.Drawing.Point(333, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 31);
+            this.label5.Size = new System.Drawing.Size(74, 31);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Cola 1";
+            this.label5.Text = "Hola";
             // 
             // Prioridad5dt
             // 
