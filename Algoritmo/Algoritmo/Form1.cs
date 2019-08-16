@@ -35,6 +35,8 @@ namespace Algoritmo
             int prioridad5 = Aleatorio.Next(0, 5);
             int tiempo5 = Aleatorio.Next(1, 30);
             Proceso procesoE = new Proceso(prioridad5, tiempo5, false);
+
+
             InitializeComponent();
         }
 
