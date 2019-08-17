@@ -31,8 +31,8 @@ namespace Algoritmo
             Random Aleatorio = new Random();
             for (int i = 0; i < procesos.Length; i++)
             {
-                int prioridad = Aleatorio.Next(0, 5);
-                int tiempo = Aleatorio.Next(1, 30);
+                int prioridad = Aleatorio.Next(0, 6);
+                int tiempo = Aleatorio.Next(1, 50);
                 procesos[i] = new Proceso(prioridad, tiempo, false,nombres[i].ToString());
             }
 
@@ -148,6 +148,13 @@ namespace Algoritmo
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
+            Cola0 = Cola0.OrderBy(x => x.TE).ToList();
+            Cola1 = Cola1.OrderBy(x => x.TE).ToList();
+            Cola2 = Cola2.OrderBy(x => x.TE).ToList();
+            Cola3 = Cola3.OrderBy(x => x.TE).ToList();
+            Cola4 = Cola4.OrderBy(x => x.TE).ToList();
+            Cola5 = Cola5.OrderBy(x => x.TE).ToList();
+
             //Prioridad 0
             if (Cola0.Count!=0)
             {
@@ -176,7 +183,7 @@ namespace Algoritmo
 
 
             //Prioridad 1
-            if (Cola0.Count==0 && Cola1!=null)
+           else if (Cola0.Count==0 && Cola1.Count!=0)
             {
                 for (int i = 0; i < Cola1.Count; i++)
                 {
@@ -204,7 +211,7 @@ namespace Algoritmo
 
 
             //Prioridad 2
-            if (Cola1.Count==0 && Cola2!=null)
+          else  if (Cola1.Count==0 && Cola2.Count!=0)
             {
                 for (int i = 0; i < Cola2.Count; i++)
                 {
@@ -232,7 +239,7 @@ namespace Algoritmo
 
 
             //Prioridad 3
-            if (Cola2.Count==0 && Cola3!=null)
+           else if (Cola2.Count==0 && Cola3.Count!=0)
             {
                 for (int i = 0; i < Cola3.Count; i++)
                 {
@@ -260,7 +267,7 @@ namespace Algoritmo
 
 
             //Prioridad 4
-            if (Cola3.Count==0 && Cola4!=null)
+         else  if (Cola3.Count==0 && Cola4.Count!=0)
             {
                 for (int i = 0; i < Cola4.Count; i++)
                 {
@@ -288,7 +295,7 @@ namespace Algoritmo
 
 
             //Prioridad 5
-            if (Cola4.Count==0 && Cola5!=null)
+           else if (Cola4.Count==0 && Cola5.Count!=0)
             {
                 for (int i = 0; i < Cola5.Count; i++)
                 {
