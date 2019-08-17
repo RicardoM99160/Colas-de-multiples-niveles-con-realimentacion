@@ -16,12 +16,13 @@ namespace Algoritmo
         //Creación de procesos
         string nombres = "ABCDE";
         Proceso[] procesos = new Proceso[5];
-        Queue<Proceso> Cola0;
-        Queue<Proceso> Cola1;
-        Queue<Proceso> Cola2;
-        Queue<Proceso> Cola3;
-        Queue<Proceso> Cola4;
-        Queue<Proceso> Cola5;
+        List<Proceso> Cola0 = new List<Proceso>();
+        List<Proceso> Cola1 = new List<Proceso>();
+        List<Proceso> Cola2 = new List<Proceso>();
+        List<Proceso> Cola3 = new List<Proceso>();
+        List<Proceso> Cola4 = new List<Proceso>();
+        List<Proceso> Cola5 = new List<Proceso>();
+
 
         public Form1()
         {
@@ -34,15 +35,7 @@ namespace Algoritmo
                 procesos[i] = new Proceso(prioridad, tiempo, false,nombres[i].ToString());
             }
 
-            //Creacion de colas
-            Cola0 = new Queue<Proceso>();
-            Cola1 = new Queue<Proceso>();
-            Cola2 = new Queue<Proceso>();
-            Cola3 = new Queue<Proceso>();
-            Cola4 = new Queue<Proceso>();
-            Cola5 = new Queue<Proceso>();
-
-
+           
             InitializeComponent();
 
             procesos = AsignacionCola(procesos);
@@ -61,27 +54,27 @@ namespace Algoritmo
             {
                 if (proceso.P == 0)
                 {
-                    Cola0.Enqueue(proceso);
+                    Cola0.Add(proceso);
                 }
                 else if (proceso.P == 1)
                 {
-                    Cola1.Enqueue(proceso);
+                    Cola1.Add(proceso);
                 }
                 else if (proceso.P == 2)
                 {
-                    Cola2.Enqueue(proceso);
+                    Cola2.Add(proceso);
                 }
                 else if (proceso.P == 3)
                 {
-                    Cola3.Enqueue(proceso);
+                    Cola3.Add(proceso);
                 }
                 else if (proceso.P == 4)
                 {
-                    Cola4.Enqueue(proceso);
+                    Cola4.Add(proceso);
                 }
                 else if (proceso.P == 5)
                 {
-                    Cola5.Enqueue(proceso);
+                    Cola5.Add(proceso);
                 }
             }
             return prcs;
@@ -91,27 +84,16 @@ namespace Algoritmo
         private void mostrarProcesos()
         {
 
-         /*   DataTable dt = (DataTable)Prioridad0dt.DataSource;
-            dt.Clear();
+            Prioridad0dt.Rows.Clear();
+            Prioridad1dt.Rows.Clear();
+            Prioridad2dt.Rows.Clear();
+            Prioridad3dt.Rows.Clear();
+            Prioridad4dt.Rows.Clear();
+            Prioridad5dt.Rows.Clear();
 
-            DataTable dt2 = (DataTable)Prioridad1dt.DataSource;
-            dt2.Clear();
 
-            DataTable dt3 = (DataTable)Prioridad2dt.DataSource;
-            dt3.Clear();
-
-            DataTable dt4 = (DataTable)Prioridad3dt.DataSource;
-            dt4.Clear();
-
-            DataTable dt5 = (DataTable)Prioridad4dt.DataSource;
-            dt5.Clear();
-
-            DataTable dt6 = (DataTable)Prioridad5dt.DataSource;
-            dt6.Clear();
-
-            Prioridad0dt.ClearSelection();*/
             foreach (Proceso item in Cola0)
-            {
+            {              
                 Prioridad0dt.Rows.Add(item.nombre, item.TE);
             }
             foreach (Proceso item in Cola1)
@@ -164,127 +146,143 @@ namespace Algoritmo
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            int terminado = 0; 
+            int terminado = 0;
             do
             {
                 //Prioridad 0
                 foreach (Proceso item in Cola0)
                 {
-
+                    if (Cola0.Count()==0)
+                    {
+                        break;
+                    }
                     item.TE -= 1;
                     
                     if (item.TE>0)
-                    {                      
-                        Cola0.Dequeue();
-                        Cola1.Enqueue(item);
+                    {
+                        Cola0.Remove(item);
+                        Cola1.Add(item);                    
                     }
                     else
                     {
-                        Cola0.Dequeue();
+                        Cola0.Remove(item);
                         terminado++;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
-                    if (Cola0==null)
-                    {
-                        break;
-                    }
                 }
-
                 //Prioridad 1
                 foreach (Proceso item in Cola1)
                 {
+                    if (Cola1.Count() == 0)
+                    {
+                        break;
+                    }
                     item.TE -= 2;
 
                     if (item.TE > 0)
                     {
-                        Cola2.Enqueue(Cola1.Dequeue());
+                        Cola1.Remove(item);
+                        Cola2.Add(item);
                     }
                     else
                     {
-                        Cola1.Dequeue();
+                        Cola1.Remove(item);
                         terminado++;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
                 }
-
                 //Prioridad 2
                 foreach (Proceso item in Cola2)
                 {
+                    if (Cola2.Count() == 0)
+                    {
+                        break;
+                    }
                     item.TE -= 4;
 
                     if (item.TE > 0)
                     {
-                        Cola3.Enqueue(Cola2.Dequeue());
+                        Cola2.Remove(item);
+                        Cola3.Add(item);
                     }
                     else
                     {
-                        Cola2.Dequeue();
+                        Cola2.Remove(item);
                         terminado++;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
                 }
-
                 //Prioridad 3
                 foreach (Proceso item in Cola3)
                 {
+                    if (Cola3.Count() == 0)
+                    {
+                        break;
+                    }
                     item.TE -= 8;
 
                     if (item.TE > 0)
                     {
-                        Cola4.Enqueue(Cola3.Dequeue());
+                        Cola3.Remove(item);
+                        Cola4.Add(item);
                     }
                     else
                     {
-                        Cola3.Dequeue();
+                        Cola3.Remove(item);
                         terminado++;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
                 }
-
                 //Prioridad 4
                 foreach (Proceso item in Cola4)
                 {
+                    if (Cola4.Count() == 0)
+                    {
+                        break;
+                    }
                     item.TE -= 16;
 
                     if (item.TE > 0)
                     {
-                        Cola5.Enqueue(Cola4.Dequeue());
+                        Cola4.Remove(item);
+                        Cola5.Add(item);
                     }
                     else
                     {
-                        Cola4.Dequeue();
+                        Cola4.Remove(item);
                         terminado++;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
                 }
-
                 //Prioridad 5
-                foreach (Proceso item in Cola0)
+                foreach (Proceso item in Cola5)
                 {
+                    if (Cola5.Count() == 0)
+                    {
+                        break;
+                    }
                     item.TE -= 32;
 
-                    if (item.TE > 0)
+                    if (item.TE<=0)
                     {
-                        Cola5.Dequeue();
-                        item.TE = 0;
+                        Cola0.Remove(item);
                         terminado++;
-                    }
+                    }             
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
                 }
 
-                
 
             }
             while (terminado<5);
