@@ -44,6 +44,11 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -64,11 +69,6 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.Prioridad0dt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Prioridad1dt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Prioridad2dt)).BeginInit();
@@ -216,6 +216,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(905, 121);
             this.panel1.TabIndex = 5;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Red;
+            this.panel6.Location = new System.Drawing.Point(544, 80);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(59, 25);
+            this.panel6.TabIndex = 17;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Red;
+            this.panel5.Location = new System.Drawing.Point(418, 80);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(59, 25);
+            this.panel5.TabIndex = 16;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Red;
+            this.panel4.Location = new System.Drawing.Point(286, 80);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(59, 25);
+            this.panel4.TabIndex = 15;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Red;
+            this.panel3.Location = new System.Drawing.Point(150, 80);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(59, 25);
+            this.panel3.TabIndex = 14;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Red;
+            this.panel2.Location = new System.Drawing.Point(23, 80);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(59, 25);
+            this.panel2.TabIndex = 13;
             // 
             // label16
             // 
@@ -420,46 +460,6 @@
             this.label11.Size = new System.Drawing.Size(98, 31);
             this.label11.TabIndex = 12;
             this.label11.Text = "Cola 5";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Location = new System.Drawing.Point(23, 80);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(59, 25);
-            this.panel2.TabIndex = 13;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Location = new System.Drawing.Point(150, 80);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(59, 25);
-            this.panel3.TabIndex = 14;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Red;
-            this.panel4.Location = new System.Drawing.Point(286, 80);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(59, 25);
-            this.panel4.TabIndex = 15;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Red;
-            this.panel5.Location = new System.Drawing.Point(418, 80);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(59, 25);
-            this.panel5.TabIndex = 16;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Red;
-            this.panel6.Location = new System.Drawing.Point(544, 80);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(59, 25);
-            this.panel6.TabIndex = 17;
             // 
             // Form1
             // 
