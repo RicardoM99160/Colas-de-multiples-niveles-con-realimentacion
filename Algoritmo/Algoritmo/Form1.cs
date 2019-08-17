@@ -146,37 +146,35 @@ namespace Algoritmo
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            int terminado = 0;
-            do
+            //Prioridad 0
+            for (int i = 0; i < Cola0.Count; i++)
             {
-                //Prioridad 0
-                for (int i = 0; i < Cola0.Count; i++)
+                Proceso item = Cola0[i];
+                item.TE -= 1;
+                if (item.TE > 0)
                 {
-                    Proceso item = Cola0[i];
-                    item.TE -= 1;
-                    if (item.TE>0)
-                    {
-                        Cola0.Remove(item);
-                        Cola1.Add(item);
-                        i--;
-                    }
-                    else
-                    {
-                        Cola0.Remove(item);
-                        terminado++;
-                        i--;
-                    }
-                    MostrarProcesoAcabado(item);
-                    mostrarProcesos();
-                    Thread.Sleep(5000);
-                    break;
+                    Cola0.Remove(item);
+                    Cola1.Add(item);
+                    i--;
                 }
-                
-                //Prioridad 1
+                else
+                {
+                    item.ActualizarEstado();
+                    Cola0.Remove(item);
+                    i--;
+                }
+                MostrarProcesoAcabado(item);
+                mostrarProcesos();
+                break;
+            }
+
+            //Prioridad 1
+            if (Cola0.Count==0)
+            {
                 for (int i = 0; i < Cola1.Count; i++)
                 {
                     Proceso item = Cola1[i];
-                    item.TE -= 1;
+                    item.TE -= 2;
                     if (item.TE > 0)
                     {
                         Cola1.Remove(item);
@@ -185,19 +183,23 @@ namespace Algoritmo
                     }
                     else
                     {
+                        item.ActualizarEstado();
                         Cola1.Remove(item);
-                        terminado++;
                         i--;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
-                    Thread.Sleep(5000);
+                    break;
                 }
-                //Prioridad 2
+            }
+
+            //Prioridad 2
+            if (Cola1.Count==0)
+            {
                 for (int i = 0; i < Cola2.Count; i++)
                 {
                     Proceso item = Cola2[i];
-                    item.TE -= 1;
+                    item.TE -= 4;
                     if (item.TE > 0)
                     {
                         Cola2.Remove(item);
@@ -206,19 +208,23 @@ namespace Algoritmo
                     }
                     else
                     {
+                        item.ActualizarEstado();
                         Cola2.Remove(item);
-                        terminado++;
                         i--;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
-                    Thread.Sleep(5000);
+                    break;
                 }
-                //Prioridad 3
+            }
+
+            //Prioridad 3
+            if (Cola2.Count==0)
+            {
                 for (int i = 0; i < Cola3.Count; i++)
                 {
                     Proceso item = Cola3[i];
-                    item.TE -= 1;
+                    item.TE -= 8;
                     if (item.TE > 0)
                     {
                         Cola3.Remove(item);
@@ -227,19 +233,22 @@ namespace Algoritmo
                     }
                     else
                     {
+                        item.ActualizarEstado();
                         Cola3.Remove(item);
-                        terminado++;
                         i--;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
-                    Thread.Sleep(5000);
+                    break;
                 }
-                //Prioridad 4
+            }
+            //Prioridad 4
+            if (Cola3.Count==0)
+            {
                 for (int i = 0; i < Cola4.Count; i++)
                 {
                     Proceso item = Cola4[i];
-                    item.TE -= 1;
+                    item.TE -= 16;
                     if (item.TE > 0)
                     {
                         Cola4.Remove(item);
@@ -248,29 +257,36 @@ namespace Algoritmo
                     }
                     else
                     {
+                        item.ActualizarEstado();
                         Cola4.Remove(item);
-                        terminado++;
                         i--;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
-                    Thread.Sleep(5000);
+                    break;
                 }
-                //Prioridad 5
+            }
+
+            //Prioridad 5
+            if (Cola4.Count==0)
+            {
                 for (int i = 0; i < Cola5.Count; i++)
                 {
                     Proceso item = Cola5[i];
                     item.TE -= 32;
 
-                    if (item.TE<=0)
+                    if (item.TE <= 0)
                     {
+                        item.ActualizarEstado();
                         Cola5.Remove(item);
-                        terminado++;
                         i--;
                     }
+                    MostrarProcesoAcabado(item);
+                    mostrarProcesos();
+                    break;
                 }
             }
-            while (terminado<5);
+            
         }
     }
 
