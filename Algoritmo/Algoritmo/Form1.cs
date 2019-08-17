@@ -15,6 +15,7 @@ namespace Algoritmo
     {
         //Creación de procesos
         string nombres = "ABCDE";
+        bool op = true;
         Proceso[] procesos = new Proceso[5];
         List<Proceso> Cola0 = new List<Proceso>();
         List<Proceso> Cola1 = new List<Proceso>();
@@ -144,32 +145,38 @@ namespace Algoritmo
 
         }
 
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
             //Prioridad 0
-            for (int i = 0; i < Cola0.Count; i++)
+            if (Cola0.Count!=0)
             {
-                Proceso item = Cola0[i];
-                item.TE -= 1;
-                if (item.TE > 0)
+                for (int i = 0; i < Cola0.Count; i++)
                 {
-                    Cola0.Remove(item);
-                    Cola1.Add(item);
-                    i--;
+                    Proceso item = Cola0[i];
+                    item.TE -= 1;
+                    if (item.TE > 0)
+                    {
+                        Cola0.Remove(item);
+                        Cola1.Add(item);
+                        i--;
+                    }
+                    else
+                    {
+                        item.ActualizarEstado();
+                        Cola0.Remove(item);
+                        i--;
+                        op = true;
+                    }
+                    MostrarProcesoAcabado(item);
+                    mostrarProcesos();
+                    break;
                 }
-                else
-                {
-                    item.ActualizarEstado();
-                    Cola0.Remove(item);
-                    i--;
-                }
-                MostrarProcesoAcabado(item);
-                mostrarProcesos();
-                break;
             }
 
+
             //Prioridad 1
-            if (Cola0.Count==0)
+            if (Cola0.Count==0 && Cola1!=null)
             {
                 for (int i = 0; i < Cola1.Count; i++)
                 {
@@ -186,6 +193,8 @@ namespace Algoritmo
                         item.ActualizarEstado();
                         Cola1.Remove(item);
                         i--;
+                        op = true;
+                        
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
@@ -193,8 +202,9 @@ namespace Algoritmo
                 }
             }
 
+
             //Prioridad 2
-            if (Cola1.Count==0)
+            if (Cola1.Count==0 && Cola2!=null)
             {
                 for (int i = 0; i < Cola2.Count; i++)
                 {
@@ -211,6 +221,8 @@ namespace Algoritmo
                         item.ActualizarEstado();
                         Cola2.Remove(item);
                         i--;
+                        op = true;
+                        
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
@@ -218,8 +230,9 @@ namespace Algoritmo
                 }
             }
 
+
             //Prioridad 3
-            if (Cola2.Count==0)
+            if (Cola2.Count==0 && Cola3!=null)
             {
                 for (int i = 0; i < Cola3.Count; i++)
                 {
@@ -236,14 +249,18 @@ namespace Algoritmo
                         item.ActualizarEstado();
                         Cola3.Remove(item);
                         i--;
+                        op = true;
+                        
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     break;
                 }
             }
+
+
             //Prioridad 4
-            if (Cola3.Count==0)
+            if (Cola3.Count==0 && Cola4!=null)
             {
                 for (int i = 0; i < Cola4.Count; i++)
                 {
@@ -260,6 +277,8 @@ namespace Algoritmo
                         item.ActualizarEstado();
                         Cola4.Remove(item);
                         i--;
+                        op = true;
+                        
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
@@ -267,8 +286,9 @@ namespace Algoritmo
                 }
             }
 
+
             //Prioridad 5
-            if (Cola4.Count==0)
+            if (Cola4.Count==0 && Cola5!=null)
             {
                 for (int i = 0; i < Cola5.Count; i++)
                 {
@@ -280,13 +300,15 @@ namespace Algoritmo
                         item.ActualizarEstado();
                         Cola5.Remove(item);
                         i--;
+                        op = true;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     break;
                 }
             }
-            
+
+
         }
     }
 
