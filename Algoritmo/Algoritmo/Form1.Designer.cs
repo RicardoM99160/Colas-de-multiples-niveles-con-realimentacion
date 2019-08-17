@@ -44,11 +44,11 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.PanelE = new System.Windows.Forms.Panel();
+            this.PanelD = new System.Windows.Forms.Panel();
+            this.PanelC = new System.Windows.Forms.Panel();
+            this.PanelB = new System.Windows.Forms.Panel();
+            this.PanelA = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -196,11 +196,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.IndianRed;
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.PanelE);
+            this.panel1.Controls.Add(this.PanelD);
+            this.panel1.Controls.Add(this.PanelC);
+            this.panel1.Controls.Add(this.PanelB);
+            this.panel1.Controls.Add(this.PanelA);
             this.panel1.Controls.Add(this.label16);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.label14);
@@ -217,45 +217,45 @@
             this.panel1.Size = new System.Drawing.Size(905, 121);
             this.panel1.TabIndex = 5;
             // 
-            // panel6
+            // PanelE
             // 
-            this.panel6.BackColor = System.Drawing.Color.Red;
-            this.panel6.Location = new System.Drawing.Point(544, 80);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(59, 25);
-            this.panel6.TabIndex = 17;
+            this.PanelE.BackColor = System.Drawing.Color.Red;
+            this.PanelE.Location = new System.Drawing.Point(544, 80);
+            this.PanelE.Name = "PanelE";
+            this.PanelE.Size = new System.Drawing.Size(59, 25);
+            this.PanelE.TabIndex = 17;
             // 
-            // panel5
+            // PanelD
             // 
-            this.panel5.BackColor = System.Drawing.Color.Red;
-            this.panel5.Location = new System.Drawing.Point(418, 80);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(59, 25);
-            this.panel5.TabIndex = 16;
+            this.PanelD.BackColor = System.Drawing.Color.Red;
+            this.PanelD.Location = new System.Drawing.Point(418, 80);
+            this.PanelD.Name = "PanelD";
+            this.PanelD.Size = new System.Drawing.Size(59, 25);
+            this.PanelD.TabIndex = 16;
             // 
-            // panel4
+            // PanelC
             // 
-            this.panel4.BackColor = System.Drawing.Color.Red;
-            this.panel4.Location = new System.Drawing.Point(286, 80);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(59, 25);
-            this.panel4.TabIndex = 15;
+            this.PanelC.BackColor = System.Drawing.Color.Red;
+            this.PanelC.Location = new System.Drawing.Point(286, 80);
+            this.PanelC.Name = "PanelC";
+            this.PanelC.Size = new System.Drawing.Size(59, 25);
+            this.PanelC.TabIndex = 15;
             // 
-            // panel3
+            // PanelB
             // 
-            this.panel3.BackColor = System.Drawing.Color.Red;
-            this.panel3.Location = new System.Drawing.Point(150, 80);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(59, 25);
-            this.panel3.TabIndex = 14;
+            this.PanelB.BackColor = System.Drawing.Color.Red;
+            this.PanelB.Location = new System.Drawing.Point(150, 80);
+            this.PanelB.Name = "PanelB";
+            this.PanelB.Size = new System.Drawing.Size(59, 25);
+            this.PanelB.TabIndex = 14;
             // 
-            // panel2
+            // PanelA
             // 
-            this.panel2.BackColor = System.Drawing.Color.Red;
-            this.panel2.Location = new System.Drawing.Point(23, 80);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(59, 25);
-            this.panel2.TabIndex = 13;
+            this.PanelA.BackColor = System.Drawing.Color.Red;
+            this.PanelA.Location = new System.Drawing.Point(23, 80);
+            this.PanelA.Name = "PanelA";
+            this.PanelA.Size = new System.Drawing.Size(59, 25);
+            this.PanelA.TabIndex = 13;
             // 
             // label16
             // 
@@ -371,6 +371,7 @@
             this.btnInicio.TabIndex = 6;
             this.btnInicio.Text = "Iniciar";
             this.btnInicio.UseVisualStyleBackColor = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // label1
             // 
@@ -534,11 +535,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel PanelE;
+        private System.Windows.Forms.Panel PanelD;
+        private System.Windows.Forms.Panel PanelC;
+        private System.Windows.Forms.Panel PanelB;
+        private System.Windows.Forms.Panel PanelA;
     }
 }
 

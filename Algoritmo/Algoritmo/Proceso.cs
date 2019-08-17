@@ -11,12 +11,14 @@ namespace Algoritmo
         public int P = 0;
         public int TE = 0;
         public bool E = false;
+        public string nombre = "";
 
-        public Proceso(int Prioridad, int TiempoEjecucion, bool Estado)
+        public Proceso(int Prioridad, int TiempoEjecucion, bool Estado, string Nombre)
         {
             P = Prioridad;
             TE = TiempoEjecucion;
             E = Estado;
+            nombre = Nombre;
         }
        public void ActualizarEstado()
         {
