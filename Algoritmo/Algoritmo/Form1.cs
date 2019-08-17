@@ -150,140 +150,125 @@ namespace Algoritmo
             do
             {
                 //Prioridad 0
-                foreach (Proceso item in Cola0)
+                for (int i = 0; i < Cola0.Count; i++)
                 {
-                    if (Cola0.Count()==0)
-                    {
-                        break;
-                    }
+                    Proceso item = Cola0[i];
                     item.TE -= 1;
-                    
                     if (item.TE>0)
                     {
                         Cola0.Remove(item);
-                        Cola1.Add(item);                    
+                        Cola1.Add(item);
+                        i--;
                     }
                     else
                     {
                         Cola0.Remove(item);
                         terminado++;
+                        i--;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
+                    break;
                 }
+                
                 //Prioridad 1
-                foreach (Proceso item in Cola1)
+                for (int i = 0; i < Cola1.Count; i++)
                 {
-                    if (Cola1.Count() == 0)
-                    {
-                        break;
-                    }
-                    item.TE -= 2;
-
+                    Proceso item = Cola1[i];
+                    item.TE -= 1;
                     if (item.TE > 0)
                     {
                         Cola1.Remove(item);
                         Cola2.Add(item);
+                        i--;
                     }
                     else
                     {
                         Cola1.Remove(item);
                         terminado++;
+                        i--;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
                 }
                 //Prioridad 2
-                foreach (Proceso item in Cola2)
+                for (int i = 0; i < Cola2.Count; i++)
                 {
-                    if (Cola2.Count() == 0)
-                    {
-                        break;
-                    }
-                    item.TE -= 4;
-
+                    Proceso item = Cola2[i];
+                    item.TE -= 1;
                     if (item.TE > 0)
                     {
                         Cola2.Remove(item);
                         Cola3.Add(item);
+                        i--;
                     }
                     else
                     {
                         Cola2.Remove(item);
                         terminado++;
+                        i--;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
                 }
                 //Prioridad 3
-                foreach (Proceso item in Cola3)
+                for (int i = 0; i < Cola3.Count; i++)
                 {
-                    if (Cola3.Count() == 0)
-                    {
-                        break;
-                    }
-                    item.TE -= 8;
-
+                    Proceso item = Cola3[i];
+                    item.TE -= 1;
                     if (item.TE > 0)
                     {
                         Cola3.Remove(item);
                         Cola4.Add(item);
+                        i--;
                     }
                     else
                     {
                         Cola3.Remove(item);
                         terminado++;
+                        i--;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
                 }
                 //Prioridad 4
-                foreach (Proceso item in Cola4)
+                for (int i = 0; i < Cola4.Count; i++)
                 {
-                    if (Cola4.Count() == 0)
-                    {
-                        break;
-                    }
-                    item.TE -= 16;
-
+                    Proceso item = Cola4[i];
+                    item.TE -= 1;
                     if (item.TE > 0)
                     {
                         Cola4.Remove(item);
                         Cola5.Add(item);
+                        i--;
                     }
                     else
                     {
                         Cola4.Remove(item);
                         terminado++;
+                        i--;
                     }
                     MostrarProcesoAcabado(item);
                     mostrarProcesos();
                     Thread.Sleep(5000);
                 }
                 //Prioridad 5
-                foreach (Proceso item in Cola5)
+                for (int i = 0; i < Cola5.Count; i++)
                 {
-                    if (Cola5.Count() == 0)
-                    {
-                        break;
-                    }
+                    Proceso item = Cola5[i];
                     item.TE -= 32;
 
                     if (item.TE<=0)
                     {
-                        Cola0.Remove(item);
+                        Cola5.Remove(item);
                         terminado++;
-                    }             
-                    MostrarProcesoAcabado(item);
-                    mostrarProcesos();
-                    Thread.Sleep(5000);
+                        i--;
+                    }
                 }
-
-
             }
             while (terminado<5);
         }
